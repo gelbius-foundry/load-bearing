@@ -26,7 +26,7 @@ nav .po{color:var(--mut);font-size:14px}
 .co.on circle{animation:pu 1.6s infinite}@keyframes pu{50%{stroke-width:10}}
 .steps .part{min-height:55vh;display:flex;flex-direction:column;justify-content:center;opacity:.3;transition:opacity .4s;border-top:0}
 .steps .part.on{opacity:1}.steps .part h3{color:var(--ink);font-size:22px}.steps .part p{font-size:18px}
-@media(max-width:760px){.anno{grid-template-columns:1fr;gap:0}.fig{top:64px;width:min(100%,calc(46vh*640/700));margin:0 auto;z-index:3}.steps .part{min-height:38vh;text-align:center}}
+@media(max-width:760px){.anno{grid-template-columns:1fr;gap:0}.fig{top:64px;width:min(100%,calc(46vh*640/700));margin:0 auto;z-index:3}.steps .part{min-height:38vh;text-align:center;justify-content:flex-end;padding-bottom:6vh}}
 @media(prefers-reduced-motion:reduce){.track{scroll-behavior:auto}.co line,.co circle{transition:none;animation:none}.co line{stroke-dashoffset:0}.co circle{r:9}.steps .part{opacity:1}}
 h1{font-size:clamp(36px,6vw,64px);letter-spacing:-.03em;text-align:center;margin:40px 0 8px;line-height:1.05}
 .lede{text-align:center;max-width:640px;margin:0 auto;color:#333;font-size:18px}
@@ -96,6 +96,6 @@ root.addEventListener('mouseleave',()=>paused=false);}}
 car(document.getElementById('hero'),true);
 const steps=[...document.querySelectorAll('.steps .part')],cos=[...document.querySelectorAll('.co')];
 if(rm){steps.forEach(s=>s.classList.add('on'));cos.forEach(c=>c.classList.add('on'))}else{
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const i=+e.target.dataset.i;steps.forEach((s,j)=>s.classList.toggle('on',j===i));cos.forEach((c,j)=>c.classList.toggle('on',j<=i))}}),{rootMargin:'-45% 0px -45% 0px'});steps.forEach(s=>io.observe(s));}car(document.getElementById('lifecar'),false);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const i=+e.target.dataset.i;steps.forEach((s,j)=>s.classList.toggle('on',j===i));cos.forEach((c,j)=>c.classList.toggle('on',j<=i))}}),{rootMargin:matchMedia('(max-width:760px)').matches?'-68% 0px -22% 0px':'-45% 0px -45% 0px'});steps.forEach(s=>io.observe(s));}car(document.getElementById('lifecar'),false);
 </script>
 </body></html>
