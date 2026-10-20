@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Load Bearing</title><meta name="description" content="Never close the lid again. Load Bearing is a parody product.">
+<meta property="og:image" content="assets/poster.jpg">
+<style>
+:root{--ink:#111;--mut:#666;--line:#e5e5e5;--acc:#1f5e45}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
+a{color:inherit;text-decoration:none}.w{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:9}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800}.logo span{color:var(--acc)}nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:14px}
+nav .po{color:var(--mut);font-size:14px}
+.hero{margin-top:12px;position:relative;border-radius:18px;overflow:hidden;background:#000;aspect-ratio:16/9}
+.hero video{width:100%;height:100%;object-fit:cover;display:block}
+.tag{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.85);border-radius:99px;padding:4px 14px;font-size:13px;color:#555}
+.vc{position:absolute;right:16px;bottom:16px;display:flex;gap:8px}.vc button{border:0;border-radius:99px;padding:8px 14px;background:rgba(255,255,255,.9);font:600 13px inherit;cursor:pointer}
+h1{font-size:clamp(36px,6vw,64px);letter-spacing:-.03em;text-align:center;margin:40px 0 8px;line-height:1.05}
+.lede{text-align:center;max-width:640px;margin:0 auto;color:#333;font-size:18px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;margin:64px 0;padding:32px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats b{display:block;font-size:40px;letter-spacing:-.02em}.stats span{color:var(--mut);font-size:14px}
+section{padding:72px 0}.eyebrow{font-size:12px;letter-spacing:.18em;font-weight:700;color:var(--acc);text-transform:uppercase}
+h2{font-size:clamp(30px,4.5vw,48px);letter-spacing:-.03em;margin:8px 0 12px;line-height:1.1}.sub{color:#333;font-size:18px;max-width:640px}
+.parts{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:32px}.parts img{width:100%;border-radius:14px}
+.part{border-top:1.5px solid var(--ink);padding:14px 0 18px}.part h3{margin:0;font-size:17px;color:#888}.part p{margin:2px 0 0}
+.tapgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.tapgrid img{width:100%;border-radius:14px}
+.prompt{font-family:ui-monospace,Menlo,monospace;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:24px;font-size:14px;color:#555}
+.prompt b{color:#111}.btns{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.btns button{font:inherit;border:1px solid #bbb;background:#fff;border-radius:6px;padding:4px 12px;cursor:pointer}
+.btns .al{border-color:#888;color:#aaa;animation:p 2.4s infinite}@keyframes p{50%{background:#eef5f1;color:var(--acc)}}
+.center{text-align:center}.center .sub{margin:0 auto}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}.card img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px}.card h3{margin:12px 0 4px}.card p{margin:0;color:#444}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px}.quotes blockquote{margin:0;font-size:19px}.quotes cite{display:block;margin-top:10px;color:var(--mut);font-style:normal;font-size:14px}
+.order{max-width:560px;margin:0 auto;border:1px solid var(--line);border-radius:18px;padding:32px}
+.price{display:flex;justify-content:space-between;align-items:baseline}.price b{font-size:44px}.price span{color:var(--mut)}
+.order ul{list-style:none;padding:0}.order li:before{content:"✓ ";color:var(--acc)}
+.cta{display:block;width:100%;background:var(--ink);color:#fff;border:0;border-radius:99px;padding:14px;font:700 16px inherit;margin:20px 0 10px;cursor:pointer}
+.small{font-size:13px;color:var(--mut);text-align:center}
+details{border-bottom:1px solid var(--line);padding:18px 0}summary{list-style:none;cursor:pointer;font-weight:600;display:flex;justify-content:space-between}summary::after{content:"+";font-weight:400}details[open] summary::after{content:"–"}details p{color:#444;margin:10px 0 0}
+footer{padding:40px 0;color:var(--mut);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+@media(max-width:760px){nav ul{display:none}.stats,.parts,.tapgrid,.cards,.quotes{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}section{padding:48px 0}.hero{aspect-ratio:4/5}}
+</style></head><body>
+<nav><div class="w"><a class="logo" href="#">Load<span>Bearing</span></a><ul><li><a href="#design">Design</a></li><li><a href="#tap">The Tap</a></li><li><a href="#life">Life</a></li><li><a href="#faq">FAQ</a></li></ul><a class="po" href="#preorder">Pre-order</a></div></nav>
+<main class="w">
+<div class="hero"><video id="v" src="assets/film.mp4" poster="assets/poster.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="tag">The commute</span>
+<div class="vc"><button id="pp" aria-label="Pause">Pause</button><button id="mu" aria-label="Unmute">🔇 Unmute</button></div></div>
+<h1>Never close the lid again</h1>
+<p class="lede">Closing your laptop pauses your agents. Leaving it on your desk means walking back to it every four minutes to click a button. Load Bearing ends the choice</p>
+<div class="stats"><div><b>0</b><span>lids closed</span></div><div><b>360°</b><span>screen visibility, for you and everyone behind you</span></div><div><b>2.1 kg</b><span>max load, tested on volunteers</span></div><div><b>∞</b><span>tokens per walk to the coffee machine</span></div></div>
+<section id="design"><div class="eyebrow">Design</div><h2>Engineered from the head up</h2><p class="sub">Five parts, one purpose: keep a 14-inch laptop level, open and online while you live your life underneath it</p>
+<div class="parts"><img src="assets/still-2.jpg" alt="Load Bearing helmet in Gloss White" loading="lazy"><div>
+<div class="part"><h3>Self-levelling tray</h3><p>A two-axis gimbal keeps the keyboard flat while you nod, sigh or look up from your phone</p></div>
+<div class="part"><h3>Monocoque dome</h3><p>One piece of gloss polymer, load rated to a mid-size workstation and one cat</p></div>
+<div class="part"><h3>Memory-foam liner</h3><p>Contoured for all-day wear and a moderate amount of thinking</p></div>
+<div class="part"><h3>Adjustable chin strap</h3><p>Because gravity hasn't shipped an update in a while</p></div>
+<div class="part"><h3>Logic board</h3><p>Watches your terminal so you don't have to. Powers The Tap</p></div></div></div></section>
+<section id="tap"><div class="tapgrid"><div><div class="eyebrow">Optional accessory</div><h2>The Tap</h2><p class="sub">A USB robot arm that reaches down and taps your shoulder the moment an agent stops to ask permission. You look up, say "always allow", and get on with your day</p>
+<div class="prompt">Allow Claude to run <b>npm test</b>?<div class="btns"><button>Yes</button><button class="al">Yes, always allow</button><button>No</button></div></div></div>
+<img src="assets/still-40.jpg" alt="The Tap shoulder arm" loading="lazy"></div></section>
+<section id="life" class="center"><h2>Built for the in-between</h2><p class="sub">The parts of your day where you used to be unproductive</p>
+<div class="cards" style="text-align:left"><div class="card"><img src="assets/still-21.jpg" alt="" loading="lazy"><h3>The coffee run</h3><p>Your refactor keeps going. Your barista has questions</p></div>
+<div class="card"><img src="assets/still-11.jpg" alt="" loading="lazy"><h3>The dog walk</h3><p>Three PRs reviewed before the second lamppost. The dog is used to it now</p></div>
+<div class="card"><img src="assets/poster.jpg" alt="" loading="lazy"><h3>The quick break</h3><p>We tested waist-up only. Everything we tested went fine</p></div></div></section>
+<section><h2 class="center">People are talking. Mostly about the hat</h2><div class="quotes">
+<blockquote>"I haven't closed my laptop since August. I'm not sure I could if I wanted to"<cite>— Early tester, staff engineer</cite></blockquote>
+<blockquote>"It tapped me during my daughter's recital. I approved a database migration. Best day of my life"<cite>— Early tester, VP of something</cite></blockquote>
+<blockquote>"Please stop wearing it in the elevator"<cite>— Building facilities team</cite></blockquote></div></section>
+<section id="preorder" class="center"><h2>Carry the load</h2><p class="sub">One size fits most heads. Laptop not included. Neck not included</p>
+<div class="order" style="text-align:left;margin-top:32px"><div class="price"><b>$123.45</b><span>one time</span></div><ul>
+<li>Load Bearing hat in Gloss White</li><li>Self-levelling laptop tray, fits 13–16 inch</li><li>Adjustable chin strap</li><li>Quick-start card (it's just a picture of a hat)</li></ul>
+<button class="cta" onclick="this.textContent='Not for sale. Close your lid.'">Pre-order now</button><p class="small"><label><input type="checkbox"> Add The Tap shoulder arm for $49</label></p>
+<p class="small">Load Bearing is a parody product and is not for sale. Do not wear a laptop on your head. Please close your lid at least once</p></div></section>
+<section id="faq" style="max-width:760px;margin:0 auto"><h2 class="center">Questions</h2>
+<details><summary>Can I just set my agent to auto-approve?</summary><p>You could. But then what would the hat be for?</p></details>
+<details><summary>Will it work with my laptop?</summary><p>The tray fits 13–16 inch laptops. Your neck is the real compatibility question.</p></details>
+<details><summary>Is it safe to drive with?</summary><p>No.</p></details>
+<details><summary>What happens when The Tap taps someone else's shoulder?</summary><p>They approve your migration. Teamwork.</p></details>
+<details><summary>How do I take it off?</summary><p>Close the lid. We know.</p></details></section>
+</main><footer>A parody product. Please close your lid at least once.</footer>
+<script>const v=document.getElementById('v'),m=document.getElementById('mu'),p=document.getElementById('pp');
+m.onclick=()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play()}m.textContent=v.muted?'🔇 Unmute':'🔊 Mute'};
+p.onclick=()=>{v.paused?v.play():v.pause();p.textContent=v.paused?'Play':'Pause'};</script>
+</body></html>
