@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Load Bearing</title><meta name="description" content="Never close the lid again. Load Bearing is a parody product.">
-<meta property="og:image" content="assets/poster.jpg">
+<meta property="og:image" content="assets/hero-studio.webp">
 <style>
 :root{--ink:#111;--mut:#666;--line:#e5e5e5;--acc:#1f5e45}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
@@ -10,9 +10,24 @@ nav .w{display:flex;align-items:center;justify-content:space-between;height:60px
 .logo{font-weight:800}.logo span{color:var(--acc)}nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:14px}
 nav .po{color:var(--mut);font-size:14px}
 .hero{margin-top:12px;position:relative;border-radius:18px;overflow:hidden;background:#000;aspect-ratio:16/9}
-.hero video{width:100%;height:100%;object-fit:cover;display:block}
-.tag{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.85);border-radius:99px;padding:4px 14px;font-size:13px;color:#555}
-.vc{position:absolute;right:16px;bottom:16px;display:flex;gap:8px}.vc button{border:0;border-radius:99px;padding:8px 14px;background:rgba(255,255,255,.9);font:600 13px inherit;cursor:pointer}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;height:100%;width:100%}.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;height:100%}.slide picture{display:block;height:100%}.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.shade{position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(transparent,rgba(0,0,0,.72));pointer-events:none}
+.hero h1{position:absolute;left:0;right:0;bottom:40px;margin:0;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.5);padding:0 16px;pointer-events:none}
+.arr{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.85);font-size:24px;line-height:1;cursor:pointer;z-index:2}.prev{left:12px}.next{right:12px}
+.dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:8px}.dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.5);cursor:pointer}.dots button.on{background:#fff;width:22px;border-radius:4px}
+.hero+.lede,.lede{margin-top:24px}
+.lifecar{position:relative;margin-top:40px}.lifecar .cards{display:flex;gap:20px;text-align:left;margin:0;padding-bottom:4px}.lifecar .card{flex:0 0 calc((100% - 40px)/3);scroll-snap-align:start}.lifecar .card img{aspect-ratio:4/5;object-fit:cover;border-radius:14px}.lifecar .arr{top:38%}.lifecar .prev{left:-20px}.lifecar .next{right:-20px}
+.anno{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:32px}
+.fig{position:sticky;top:84px;align-self:start;aspect-ratio:640/700;width:100%;border-radius:14px;overflow:hidden;background:#000}
+.fig img,.fig svg{position:absolute;inset:0;width:100%;height:100%}
+.co line{stroke:#fff;stroke-width:2;stroke-dasharray:400;stroke-dashoffset:400;transition:stroke-dashoffset .8s ease}
+.co circle{fill:#fff;stroke:var(--acc);stroke-width:4;r:0;transition:r .3s}.co.on circle{r:9}.co.on line{stroke-dashoffset:0}
+.co.on circle{animation:pu 1.6s infinite}@keyframes pu{50%{stroke-width:10}}
+.steps .part{min-height:55vh;display:flex;flex-direction:column;justify-content:center;opacity:.3;transition:opacity .4s;border-top:0}
+.steps .part.on{opacity:1}.steps .part h3{color:var(--ink);font-size:22px}.steps .part p{font-size:18px}
+@media(max-width:760px){.anno{grid-template-columns:1fr;gap:0}.fig{top:64px;width:min(100%,calc(46vh*640/700));margin:0 auto;z-index:3}.steps .part{min-height:38vh;text-align:center}}
+@media(prefers-reduced-motion:reduce){.track{scroll-behavior:auto}.co line,.co circle{transition:none;animation:none}.co line{stroke-dashoffset:0}.co circle{r:9}.steps .part{opacity:1}}
 h1{font-size:clamp(36px,6vw,64px);letter-spacing:-.03em;text-align:center;margin:40px 0 8px;line-height:1.05}
 .lede{text-align:center;max-width:640px;margin:0 auto;color:#333;font-size:18px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;margin:64px 0;padding:32px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -21,12 +36,12 @@ section{padding:72px 0}.eyebrow{font-size:12px;letter-spacing:.18em;font-weight:
 h2{font-size:clamp(30px,4.5vw,48px);letter-spacing:-.03em;margin:8px 0 12px;line-height:1.1}.sub{color:#333;font-size:18px;max-width:640px}
 .parts{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:32px}.parts img{width:100%;border-radius:14px}
 .part{border-top:1.5px solid var(--ink);padding:14px 0 18px}.part h3{margin:0;font-size:17px;color:#888}.part p{margin:2px 0 0}
-.tapgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.tapgrid img{width:100%;border-radius:14px}
+.tapgrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.tapgrid img{display:block;width:100%;border-radius:14px}
 .prompt{font-family:ui-monospace,Menlo,monospace;border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:24px;font-size:14px;color:#555}
 .prompt b{color:#111}.btns{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.btns button{font:inherit;border:1px solid #bbb;background:#fff;border-radius:6px;padding:4px 12px;cursor:pointer}
 .btns .al{border-color:#888;color:#aaa;animation:p 2.4s infinite}@keyframes p{50%{background:#eef5f1;color:var(--acc)}}
 .center{text-align:center}.center .sub{margin:0 auto}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}.card img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px}.card h3{margin:12px 0 4px}.card p{margin:0;color:#444}
+.card img{width:100%;object-fit:cover;border-radius:14px}.card h3{margin:12px 0 4px}.card p{margin:0;color:#444}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px}.quotes blockquote{margin:0;font-size:19px}.quotes cite{display:block;margin-top:10px;color:var(--mut);font-style:normal;font-size:14px}
 .order{max-width:560px;margin:0 auto;border:1px solid var(--line);border-radius:18px;padding:32px}
 .price{display:flex;justify-content:space-between;align-items:baseline}.price b{font-size:44px}.price span{color:var(--mut)}
@@ -35,29 +50,22 @@ h2{font-size:clamp(30px,4.5vw,48px);letter-spacing:-.03em;margin:8px 0 12px;line
 .small{font-size:13px;color:var(--mut);text-align:center}
 details{border-bottom:1px solid var(--line);padding:18px 0}summary{list-style:none;cursor:pointer;font-weight:600;display:flex;justify-content:space-between}summary::after{content:"+";font-weight:400}details[open] summary::after{content:"–"}details p{color:#444;margin:10px 0 0}
 footer{padding:40px 0;color:var(--mut);font-size:13px;text-align:center;border-top:1px solid var(--line)}
-@media(max-width:760px){nav ul{display:none}.stats,.parts,.tapgrid,.cards,.quotes{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}section{padding:48px 0}.hero{aspect-ratio:4/5}}
+@media(max-width:760px){nav ul{display:none}.stats,.parts,.tapgrid,.quotes{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}section{padding:48px 0}.hero{aspect-ratio:4/5}.hero .arr,.lifecar .arr{display:none}.lifecar .card{flex-basis:78%}}
 </style></head><body>
 <nav><div class="w"><a class="logo" href="#">Load<span>Bearing</span></a><ul><li><a href="#design">Design</a></li><li><a href="#tap">The Tap</a></li><li><a href="#life">Life</a></li><li><a href="#faq">FAQ</a></li></ul><a class="po" href="#preorder">Pre-order</a></div></nav>
 <main class="w">
-<div class="hero"><video id="v" src="assets/film.mp4" poster="assets/poster.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="tag">The commute</span>
-<div class="vc"><button id="pp" aria-label="Pause">Pause</button><button id="mu" aria-label="Unmute">🔇 Unmute</button></div></div>
-<h1>Never close the lid again</h1>
+<div class="hero car" id="hero" aria-roledescription="carousel" aria-label="Shots from the film"><div class="track" tabindex="0"><div class="slide"><picture><source media="(max-width:760px)" srcset="assets/hero-studio-m.webp"><img src="assets/hero-studio.webp" alt="Load Bearing in Gloss White" width="1280" height="720" fetchpriority="high"></picture></div><div class="slide"><picture><source media="(max-width:760px)" srcset="assets/hero-lid-m.webp"><img src="assets/hero-lid.webp" alt="Hands on a laptop lid" width="1280" height="720" loading="lazy"></picture></div><div class="slide"><picture><source media="(max-width:760px)" srcset="assets/hero-subway-m.webp"><img src="assets/hero-subway.webp" alt="The commute" width="1280" height="720" loading="lazy"></picture></div><div class="slide"><picture><source media="(max-width:760px)" srcset="assets/hero-coffee-m.webp"><img src="assets/hero-coffee.webp" alt="The coffee run" width="1280" height="720" loading="lazy"></picture></div><div class="slide"><picture><source media="(max-width:760px)" srcset="assets/hero-dog-m.webp"><img src="assets/hero-dog.webp" alt="The dog walk" width="1280" height="720" loading="lazy"></picture></div><div class="slide"><picture><source media="(max-width:760px)" srcset="assets/hero-gym-m.webp"><img src="assets/hero-gym.webp" alt="Leg day" width="1280" height="720" loading="lazy"></picture></div><div class="slide"><picture><source media="(max-width:760px)" srcset="assets/hero-tap-m.webp"><img src="assets/hero-tap.webp" alt="The Tap" width="1280" height="720" loading="lazy"></picture></div><div class="slide"><picture><source media="(max-width:760px)" srcset="assets/hero-glow-m.webp"><img src="assets/hero-glow.webp" alt="Load Bearing, glowing" width="1280" height="720" loading="lazy"></picture></div></div>
+<div class="shade"></div><h1>Never close the lid again</h1>
+<button class="arr prev" aria-label="Previous">‹</button><button class="arr next" aria-label="Next">›</button><div class="dots"><button aria-label="Shot 1"></button><button aria-label="Shot 2"></button><button aria-label="Shot 3"></button><button aria-label="Shot 4"></button><button aria-label="Shot 5"></button><button aria-label="Shot 6"></button><button aria-label="Shot 7"></button><button aria-label="Shot 8"></button></div></div>
 <p class="lede">Closing your laptop pauses your agents. Leaving it on your desk means walking back to it every four minutes to click a button. Load Bearing ends the choice</p>
 <div class="stats"><div><b>0</b><span>lids closed</span></div><div><b>360°</b><span>screen visibility, for you and everyone behind you</span></div><div><b>2.1 kg</b><span>max load, tested on volunteers</span></div><div><b>∞</b><span>tokens per walk to the coffee machine</span></div></div>
 <section id="design"><div class="eyebrow">Design</div><h2>Engineered from the head up</h2><p class="sub">Five parts, one purpose: keep a 14-inch laptop level, open and online while you live your life underneath it</p>
-<div class="parts"><img src="assets/still-2.jpg" alt="Load Bearing helmet in Gloss White" loading="lazy"><div>
-<div class="part"><h3>Self-levelling tray</h3><p>A two-axis gimbal keeps the keyboard flat while you nod, sigh or look up from your phone</p></div>
-<div class="part"><h3>Monocoque dome</h3><p>One piece of gloss polymer, load rated to a mid-size workstation and one cat</p></div>
-<div class="part"><h3>Memory-foam liner</h3><p>Contoured for all-day wear and a moderate amount of thinking</p></div>
-<div class="part"><h3>Adjustable chin strap</h3><p>Because gravity hasn't shipped an update in a while</p></div>
-<div class="part"><h3>Logic board</h3><p>Watches your terminal so you don't have to. Powers The Tap</p></div></div></div></section>
+<div class="anno"><div class="fig"><img src="assets/design-exploded.webp" alt="Exploded view of Load Bearing" width="640" height="700" loading="lazy"><svg viewBox="0 0 640 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g class="co" data-i="0"><line x1="410" y1="228" x2="600" y2="150"/><circle cx="410" cy="228"/></g><g class="co" data-i="1"><line x1="330" y1="340" x2="600" y2="300"/><circle cx="330" cy="340"/></g><g class="co" data-i="2"><line x1="330" y1="440" x2="600" y2="400"/><circle cx="330" cy="440"/></g><g class="co" data-i="3"><line x1="258" y1="590" x2="40" y2="640"/><circle cx="258" cy="590"/></g><g class="co" data-i="4"><line x1="315" y1="525" x2="40" y2="470"/><circle cx="315" cy="525"/></g></svg></div><div class="steps"><div class="part" data-i="0"><h3>Self-levelling tray</h3><p>A two-axis gimbal keeps the keyboard flat while you nod, sigh or look up from your phone</p></div><div class="part" data-i="1"><h3>Monocoque dome</h3><p>One piece of gloss polymer, load rated to a mid-size workstation and one cat</p></div><div class="part" data-i="2"><h3>Memory-foam liner</h3><p>Contoured for all-day wear and a moderate amount of thinking</p></div><div class="part" data-i="3"><h3>Adjustable chin strap</h3><p>Because gravity hasn't shipped an update in a while</p></div><div class="part" data-i="4"><h3>Logic board</h3><p>Watches your terminal so you don't have to. Powers The Tap</p></div></div></div></section>
 <section id="tap"><div class="tapgrid"><div><div class="eyebrow">Optional accessory</div><h2>The Tap</h2><p class="sub">A USB robot arm that reaches down and taps your shoulder the moment an agent stops to ask permission. You look up, say "always allow", and get on with your day</p>
 <div class="prompt">Allow Claude to run <b>npm test</b>?<div class="btns"><button>Yes</button><button class="al">Yes, always allow</button><button>No</button></div></div></div>
-<img src="assets/still-40.jpg" alt="The Tap shoulder arm" loading="lazy"></div></section>
+<picture class="tapgif"><source media="(prefers-reduced-motion: reduce)" srcset="assets/tap-poster.jpg"><source type="image/webp" srcset="assets/tap-720.webp"><source media="(max-width:760px)" srcset="assets/tap-480.gif"><img src="assets/tap-720.gif" alt="The Tap reaches down and taps his shoulder when Claude needs permission" width="720" height="406" loading="lazy"></picture></div></section>
 <section id="life" class="center"><h2>Built for the in-between</h2><p class="sub">The parts of your day where you used to be unproductive</p>
-<div class="cards" style="text-align:left"><div class="card"><img src="assets/still-21.jpg" alt="" loading="lazy"><h3>The coffee run</h3><p>Your refactor keeps going. Your barista has questions</p></div>
-<div class="card"><img src="assets/still-11.jpg" alt="" loading="lazy"><h3>The dog walk</h3><p>Three PRs reviewed before the second lamppost. The dog is used to it now</p></div>
-<div class="card"><img src="assets/poster.jpg" alt="" loading="lazy"><h3>The quick break</h3><p>We tested waist-up only. Everything we tested went fine</p></div></div></section>
+<div class="lifecar car" id="lifecar"><div class="cards track" tabindex="0"><div class="card"><img src="assets/life-commute.webp" alt="The commute" width="480" height="600" loading="lazy"><h3>The commute</h3><p>Four stops. One database migration</p></div><div class="card"><img src="assets/life-coffee.webp" alt="The coffee run" width="480" height="600" loading="lazy"><h3>The coffee run</h3><p>Your refactor keeps going. Your barista has questions</p></div><div class="card"><img src="assets/life-dog.webp" alt="The dog walk" width="480" height="600" loading="lazy"><h3>The dog walk</h3><p>Three PRs reviewed before the second lamppost. The dog is used to it now</p></div><div class="card"><img src="assets/life-dinner.webp" alt="Dinner" width="480" height="600" loading="lazy"><h3>Dinner</h3><p>The sauce is reducing. So is your backlog</p></div><div class="card"><img src="assets/life-legday.webp" alt="Leg day" width="480" height="600" loading="lazy"><h3>Leg day</h3><p>Mile two. Ticket forty-seven</p></div><div class="card"><img src="assets/life-break.webp" alt="The quick break" width="480" height="600" loading="lazy"><h3>The quick break</h3><p>We tested waist-up only. Everything we tested went fine</p></div></div><button class="arr prev" aria-label="Previous">‹</button><button class="arr next" aria-label="Next">›</button></div></section>
 <section><h2 class="center">People are talking. Mostly about the hat</h2><div class="quotes">
 <blockquote>"I haven't closed my laptop since August. I'm not sure I could if I wanted to"<cite>— Early tester, staff engineer</cite></blockquote>
 <blockquote>"It tapped me during my daughter's recital. I approved a database migration. Best day of my life"<cite>— Early tester, VP of something</cite></blockquote>
@@ -74,7 +82,20 @@ footer{padding:40px 0;color:var(--mut);font-size:13px;text-align:center;border-t
 <details><summary>What happens when The Tap taps someone else's shoulder?</summary><p>They approve your migration. Teamwork.</p></details>
 <details><summary>How do I take it off?</summary><p>Close the lid. We know.</p></details></section>
 </main><footer>A parody product. Please close your lid at least once.</footer>
-<script>const v=document.getElementById('v'),m=document.getElementById('mu'),p=document.getElementById('pp');
-m.onclick=()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play()}m.textContent=v.muted?'🔇 Unmute':'🔊 Mute'};
-p.onclick=()=>{v.paused?v.play():v.pause();p.textContent=v.paused?'Play':'Pause'};</script>
+<script>
+const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function car(root,auto){const t=root.querySelector('.track'),items=[...t.children],dots=[...root.querySelectorAll('.dots button')];
+const idx=()=>Math.round(t.scrollLeft/items[0].offsetWidth);
+const go=i=>{i=(i+items.length)%items.length;t.scrollTo({left:items[i].offsetLeft-t.offsetLeft,behavior:rm?'auto':'smooth'})};
+root.querySelector('.prev').onclick=()=>go(idx()-1);root.querySelector('.next').onclick=()=>go(idx()+1);
+dots.forEach((d,i)=>d.onclick=()=>go(i));
+const mark=()=>dots.forEach((d,i)=>d.classList.toggle('on',i===idx()));t.addEventListener('scroll',mark,{passive:true});mark();
+if(auto&&!rm){let paused=false,timer;const tick=()=>{if(!paused&&!document.hidden)go(idx()+1)};timer=setInterval(tick,4000);
+['mouseenter','focusin','touchstart','pointerdown'].forEach(e=>root.addEventListener(e,()=>paused=true,{passive:true}));
+root.addEventListener('mouseleave',()=>paused=false);}}
+car(document.getElementById('hero'),true);
+const steps=[...document.querySelectorAll('.steps .part')],cos=[...document.querySelectorAll('.co')];
+if(rm){steps.forEach(s=>s.classList.add('on'));cos.forEach(c=>c.classList.add('on'))}else{
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const i=+e.target.dataset.i;steps.forEach((s,j)=>s.classList.toggle('on',j===i));cos.forEach((c,j)=>c.classList.toggle('on',j<=i))}}),{rootMargin:'-45% 0px -45% 0px'});steps.forEach(s=>io.observe(s));}car(document.getElementById('lifecar'),false);
+</script>
 </body></html>
